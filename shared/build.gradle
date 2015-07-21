@@ -1,0 +1,39 @@
+// File: shared/build.gradle
+plugins {
+    id 'java'
+    id "com.github.j2objccontrib.j2objcgradle" version "0.3.0-alpha"
+}
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+    maven { url 'http://maven.nuxeo.org/nexus/content/groups/internal-snapshots' }
+    maven { url 'http://maven.nuxeo.org/nexus/content/groups/internal-releases' }
+    maven { url 'http://maven.nuxeo.org/nexus/content/repositories/daily-snapshots' }
+    maven { url 'http://maven.nuxeo.org/nexus/content/repositories/public-releases' }
+    maven { url 'http://maven.nuxeo.org/nexus/content/repositories/public-snapshots' }
+}
+
+dependencies {
+    compile ('org.nuxeo.ecm.automation:nuxeo-automation-client:7.4-SNAPSHOT')
+}
+
+// Plugin settings:
+j2objcConfig {
+    xcodeProjectDir "${projectDir}/../ios"   // Xcode workspace directory
+    xcodeTarget "automation-j2objc"                     // Xcode application target name
+    testMinExpectedTests 0
+
+    // Other Settings:
+    // https://github.com/j2objc-contrib/j2objc-gradle/blob/master/src/main/groovy/com/github/j2objccontrib/j2objcgradle/J2objcConfig.groovy#L25
+    translateArgs '--no-package-directories', '-use-arc', '--prefixes', 'prefixes.properties', '--segmented-headers'
+    extraObjcCompilerArgs '-fobjc-arc'
+
+    // You must include this call at the end of j2objcConfig, regardless of settings
+    finalConfigure()
+}
+
+task copyToLib(type: Copy) {
+    into "$buildDir/../lib"
+    from configurations.runtime
+}

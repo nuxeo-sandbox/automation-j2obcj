@@ -1,0 +1,14 @@
+PODS:
+  - j2objc-shared (1.0)
+
+DEPENDENCIES:
+  - j2objc-shared (from `../shared/build`)
+
+EXTERNAL SOURCES:
+  j2objc-shared:
+    :path: "../shared/build"
+
+SPEC CHECKSUMS:
+  j2objc-shared: 52ba8226f9c4e98386c39838264c00e315a3d24f
+
+COCOAPODS: 0.38.0
