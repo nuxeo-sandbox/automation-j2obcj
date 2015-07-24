@@ -1,6 +1,5 @@
 # Gradle
 local.properties
-settings.gradle
 
 # Shared libs
 shared/lib/
