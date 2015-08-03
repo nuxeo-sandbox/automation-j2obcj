@@ -1,7 +1,7 @@
 // File: shared/build.gradle
 plugins {
     id 'java'
-    id "com.github.j2objccontrib.j2objcgradle" version "0.3.0-alpha"
+    id "com.github.j2objccontrib.j2objcgradle" version "0.4.0-alpha"
 }
 
 repositories {
@@ -16,6 +16,18 @@ repositories {
 
 dependencies {
     compile ('org.nuxeo.ecm.automation:nuxeo-automation-client:7.4-SNAPSHOT')
+    compile ('com.fasterxml.jackson.core:jackson-core:2.6.0:sources')
+    compile ('com.fasterxml.jackson.core:jackson-databind:2.6.0:sources')
+    compile ('com.fasterxml.jackson.core:jackson-annotations:2.6.0:sources')
+    compile ('com.fasterxml.jackson.core:jackson-core:2.6.0')
+    compile ('com.fasterxml.jackson.core:jackson-databind:2.6.0')
+    compile ('com.fasterxml.jackson.core:jackson-annotations:2.6.0')
+    compile ('javax.xml.parsers:jaxp-api:1.4.5')
+    compile ('javax.xml.parsers:jaxp-api:1.4.5:sources')
+
+    // For swing stuff in javax.xml.parsers (not necessary)
+    //compile ('xml-apis:xml-apis:1.0.b2:sources')
+    //compile ('xml-apis:xml-apis:1.0.b2')
 }
 
 // Plugin settings:
@@ -26,7 +38,7 @@ j2objcConfig {
 
     // Other Settings:
     // https://github.com/j2objc-contrib/j2objc-gradle/blob/master/src/main/groovy/com/github/j2objccontrib/j2objcgradle/J2objcConfig.groovy#L25
-    translateArgs '--no-package-directories', '-use-arc', '--prefixes', 'prefixes.properties', '--segmented-headers'
+    translateArgs '--no-package-directories', '-use-arc', '--prefixes', 'prefixes.properties', '--segmented-headers', '-classpath', 'lib/jackson-core-2.6.0.jar:lib/jackson-databind-2.6.0.jar:lib/nuxeo-automation-client-7.4-SNAPSHOT.jar'
     extraObjcCompilerArgs '-fobjc-arc'
 
     // You must include this call at the end of j2objcConfig, regardless of settings
