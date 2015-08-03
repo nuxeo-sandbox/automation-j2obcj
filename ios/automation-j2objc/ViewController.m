@@ -7,7 +7,7 @@
 //
 
 #import "ViewController.h"
-#import <Document.h>
+#import <DateUtils.h>
 
 @interface ViewController ()
 
@@ -18,8 +18,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    NXMDocument* doc = [[NXMDocument alloc] initWithNSString:@"/default-domain"];
-    NSLog(@"%@", [doc getId]);
+    NXMDateUtils* utils = [[NXMDateUtils alloc] init];
+    NSLog(@"%@", [utils writeJson]);
 }
 
 - (void)didReceiveMemoryWarning {

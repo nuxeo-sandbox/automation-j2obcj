@@ -11,6 +11,15 @@
  */
 package org.nuxeo.ecm.automation.client.model;
 
+import com.fasterxml.jackson.core.JsonGenerationException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
+import java.io.ByteArrayOutputStream;
+import java.io.File;
+import java.io.IOException;
+import java.io.OutputStream;
+import java.io.OutputStreamWriter;
+import java.io.Writer;
 import java.util.Date;
 
 /**
@@ -33,4 +42,11 @@ public class DateUtils {
         return DateParser.formatW3CDateTime(date);
     }
 
+    public String writeJson() throws IOException {
+        ObjectMapper mapper = new ObjectMapper();
+        OutputStream out = new ByteArrayOutputStream();
+        Writer writer = new OutputStreamWriter(out);
+        mapper.writeValue(writer, this);
+        return "json document file generated";
+    }
 }
