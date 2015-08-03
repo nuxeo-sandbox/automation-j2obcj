@@ -30,7 +30,7 @@ import java.util.Date;
  *
  * @author <a href="mailto:bs@nuxeo.com">Bogdan Stefanescu</a>
  */
-public class Document extends DocRef {
+public class NXMDocument extends DocRef {
 
     private static final long serialVersionUID = 1L;
 
@@ -66,9 +66,11 @@ public class Document extends DocRef {
      * Deprecated now use with the constructor with versionLabel and isCheckedOut
      *
      */
-    public Document(String id, String type, PropertyList facets, String changeToken, String path, String state,
-                    String lockOwner, String lockCreated, String repository, PropertyMap properties,
-                    PropertyMap contextParameters) {
+    public NXMDocument(String id, String type, PropertyList facets, String
+            changeToken, String path, String state,
+            String lockOwner, String lockCreated, String repository,
+            PropertyMap properties,
+            PropertyMap contextParameters) {
         this(id, type, facets, changeToken, path, state, lockOwner, lockCreated, repository, null, null, properties,
                 contextParameters);
     }
@@ -78,9 +80,11 @@ public class Document extends DocRef {
      * Deprecated now use with the constructor with isCheckedOut
      *
      */
-    public Document(String id, String type, PropertyList facets, String changeToken, String path, String state,
-                    String lockOwner, String lockCreated, String repository, String versionLabel, PropertyMap properties,
-                    PropertyMap contextParameters) {
+    public NXMDocument(String id, String type, PropertyList facets, String
+            changeToken, String path, String state,
+            String lockOwner, String lockCreated, String repository, String
+            versionLabel, PropertyMap properties,
+            PropertyMap contextParameters) {
         this(id, type, facets, changeToken, path, state, lockOwner, lockCreated, repository, versionLabel, null,
                 properties, contextParameters);
     }
@@ -90,9 +94,11 @@ public class Document extends DocRef {
      *
      * @since 5.7.3
      */
-    public Document(String id, String type, PropertyList facets, String changeToken, String path, String state,
-                    String lockOwner, String lockCreated, String repository, String versionLabel, String isCheckedOut,
-                    PropertyMap properties, PropertyMap contextParameters) {
+    public NXMDocument(String id, String type, PropertyList facets, String
+            changeToken, String path, String state,
+            String lockOwner, String lockCreated, String repository, String
+            versionLabel, String isCheckedOut,
+            PropertyMap properties, PropertyMap contextParameters) {
         super(id);
         this.changeToken = changeToken;
         this.facets = facets;
@@ -115,7 +121,7 @@ public class Document extends DocRef {
      *
      * @since 5.7
      */
-    public Document(String id, String type) {
+    public NXMDocument(String id, String type) {
         super(id);
         this.type = type;
         propertiesSetter = new PropertyMapSetter(new PropertyMap());

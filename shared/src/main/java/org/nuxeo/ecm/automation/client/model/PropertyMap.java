@@ -118,7 +118,7 @@ public class PropertyMap implements Serializable {
     }
 
     /**
-     * @deprecated since 5.7. Use {@link Document#set(String, String)} to inject data.
+     * @deprecated since 5.7. Use {@link NXMDocument#set(String, String)} to inject data.
      */
     @Deprecated
     public void set(String key, String value) {
@@ -129,7 +129,7 @@ public class PropertyMap implements Serializable {
     }
 
     /**
-     * @deprecated since 5.7. Use {@link Document#set(String, Boolean)} to inject data.
+     * @deprecated since 5.7. Use {@link NXMDocument#set(String, Boolean)} to inject data.
      */
     @Deprecated
     public void set(String key, Boolean value) {
@@ -140,7 +140,7 @@ public class PropertyMap implements Serializable {
     }
 
     /**
-     * @deprecated since 5.7. Use {@link Document#set(String, Long)} to inject data.
+     * @deprecated since 5.7. Use {@link NXMDocument#set(String, Long)} to inject data.
      */
     @Deprecated
     public void set(String key, Long value) {
@@ -151,7 +151,7 @@ public class PropertyMap implements Serializable {
     }
 
     /**
-     * @deprecated since 5.7. Use {@link Document#set(String, Double)} to inject data.
+     * @deprecated since 5.7. Use {@link NXMDocument#set(String, Double)} to inject data.
      */
     @Deprecated
     public void set(String key, Double value) {
@@ -162,7 +162,7 @@ public class PropertyMap implements Serializable {
     }
 
     /**
-     * @deprecated since 5.7. Use {@link Document#set(String, java.util.Date)} to inject data.
+     * @deprecated since 5.7. Use {@link NXMDocument#set(String, java.util.Date)} to inject data.
      */
     @Deprecated
     public void set(String key, Date value) {
@@ -173,7 +173,7 @@ public class PropertyMap implements Serializable {
     }
 
     /**
-     * @deprecated since 5.7. Use {@link Document#set(String, PropertyList)} to inject data.
+     * @deprecated since 5.7. Use {@link NXMDocument#set(String, PropertyList)} to inject data.
      */
     @Deprecated
     public void set(String key, PropertyList value) {
@@ -184,7 +184,7 @@ public class PropertyMap implements Serializable {
     }
 
     /**
-     * @deprecated since 5.7. Use {@link Document#set(String, PropertyMap)} to inject data.
+     * @deprecated since 5.7. Use {@link NXMDocument#set(String, PropertyMap)} to inject data.
      */
     @Deprecated
     public void set(String key, PropertyMap value) {
